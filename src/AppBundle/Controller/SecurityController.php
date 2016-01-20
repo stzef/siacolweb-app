@@ -27,27 +27,27 @@ class SecurityController extends Controller
 		$lastUsername = $authenticationUtils->getLastUsername();
 
 		$colegioRepository = $this->getDoctrine()
-                ->getRepository('AppBundle:Colegios');
+								->getRepository('AppBundle:Colegios');
 
 		$colegio = $colegioRepository->findOneBy(array());
 
 		return $this->render(
-		    'security/login.html.twig',
-		    array(
-		        // last username entered by the user
-		        'last_username' => $lastUsername,
-		        'error'         => $error,
-		        'colegio'		=> $colegio,
-		    )
+				'security/login.html.twig',
+				array(
+						// last username entered by the user
+						'last_username' => $lastUsername,
+						'error'         => $error,
+						'colegio'		=> $colegio,
+				)
 		);
 
 	}
 
-	 /**
-     * @Route("/login_check", name="login_check")
-     */
-    public function loginCheckAction()
-    {
-        
-    }
+	/**
+	 * @Route("/login_check", name="login_check")
+	 */
+	public function loginCheckAction(Request $request)
+	{
+
+	}
 }

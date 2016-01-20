@@ -8,14 +8,13 @@ use Symfony\Component\HttpFoundation\Request;
 
 class MainMenuController extends Controller {
 
-
 	// return view main_menu.index
-    /**
-     * @Route("/menu", name="menu")
-     */
+		/**
+		 * @Route("/menu", name="menu")
+		 */
 	public function indexAction(Request $request)
 	{
-		//$user = $this->getUser();
+
 		$user = $this->get('security.context')->getToken()->getUser();
 		$context = array(
 				'usuario' => $user
