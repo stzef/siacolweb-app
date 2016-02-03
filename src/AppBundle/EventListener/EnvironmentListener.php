@@ -29,12 +29,13 @@ class EnvironmentListener extends ContainerAware
 
 		$request = $event->getRequest();
 
+		/*
 		if ($request->get('_route') == '') {
 			$redirectInit = '/init';
 			$event->setController(function() use ($redirectInit) {
 					return new RedirectResponse($redirectInit);
 				});
-		}
+		}*/
 
 		if ( isset($environment))
 		{

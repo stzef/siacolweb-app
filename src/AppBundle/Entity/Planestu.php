@@ -183,4 +183,3 @@ class Planestu
         $this->cmate = $cmate;
     }
 }
-

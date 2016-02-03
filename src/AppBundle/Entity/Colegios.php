@@ -479,4 +479,3 @@ class Colegios
         $this->id = $id;
     }
 }
-

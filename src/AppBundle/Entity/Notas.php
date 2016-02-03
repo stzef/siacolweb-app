@@ -164,4 +164,3 @@ class Notas
         $this->cnota = $cnota;
     }
 }
-

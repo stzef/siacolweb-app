@@ -165,4 +165,3 @@ class Periodos
         $this->cperi = $cperi;
     }
 }
-
