@@ -2,7 +2,7 @@
 parameters:
     database_host: localhost
     database_port: 3306
-    database_name: siacolweb_2016colegios
+    database_name: siacolwe_2016colegios
     database_user: siacolwe_stzef
     database_password: NevNav9956
     mailer_transport: smtp

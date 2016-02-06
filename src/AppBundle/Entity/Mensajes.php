@@ -10,7 +10,7 @@ class Mensajes
 {
     /** 
     * @var integer
-    * @ORM\Column(name="emisor", type="integer", length=12, nullable=true)
+    * @ORM\Column(name="emisor", type="string", length=20, nullable=true)
     */
     private $emisor;
 

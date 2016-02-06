@@ -7,7 +7,7 @@
     <id name="cmensaje" type="integer" column="cmensaje">
       <generator strategy="IDENTITY"/>
     </id>
-    <field name="emisor" type="integer" column="emisor" nullable="false">
+    <field name="emisor" type="string" column="emisor" nullable="false">
       <options>
         <option name="unsigned"/>
       </options>
