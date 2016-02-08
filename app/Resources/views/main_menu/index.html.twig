@@ -9,7 +9,7 @@
 	<div class="container username-container">
 		<div class="row end">
 			{% if foreingUser %}
-				<p class="username">{{ foreingUser }}</p>
+				<p class="username">{{ foreingUser.getNombreCompleto() | upper }}</p>
 			{% else %}
 				<p class="username"> No sé quien eres. </p>
 			{% endif %}

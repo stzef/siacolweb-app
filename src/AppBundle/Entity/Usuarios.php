@@ -380,7 +380,7 @@ class Usuarios implements UserInterface
 
     public function getRoles()
     {
-        return array('1');
+        return array('A');
     }
 
      public function getSalt()

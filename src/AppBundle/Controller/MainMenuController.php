@@ -18,6 +18,7 @@ class MainMenuController extends Controller {
 	{
 
 		$user = $this->get('security.context')->getToken()->getUser();
+
 		$mensajesRepository = $this->getDoctrine()
 								->getRepository('AppBundle:Mensajes');
 
@@ -42,6 +43,16 @@ class MainMenuController extends Controller {
 	public function getForeignUser($user)
 	{
 		$foreingUser = null;
+		$rol = $user->getRoles()[0];
+		switch ($rol) {
+			case 'A':
+				$rp = $this->getDoctrine()->getRepository('AppBundle:Alumnos');
+				$alumno = $rp->findOneBy(array('calum' => $user->getProfalum()));
+				$foreingUser = $alumno;
+				break;
+			default:
+				break;
+		}
 
 		return $foreingUser;
 	}

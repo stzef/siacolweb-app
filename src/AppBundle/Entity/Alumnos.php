@@ -162,6 +162,15 @@ class Alumnos
      */
     private $cmuniexpe;
 
+    public function getNombreCompleto()
+    {
+        $ape1alum = $this->getApe1alum();
+        $ape2alum = $this->getApe2alum();
+        $nom1alum = $this->getNom1alum();
+        $nom2alum = $this->getNom2alum();
+        return $nom1alum." ".$nom2alum." ".$ape1alum." ".$ape2alum;
+    }
+
     public function getIdalum() {
         return $this->idalum;
     }
