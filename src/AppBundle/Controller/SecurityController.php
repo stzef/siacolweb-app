@@ -31,6 +31,7 @@ class SecurityController extends Controller
 
 		$colegio = $colegioRepository->findOneBy(array());
 
+
 		return $this->render(
 				'security/login.html.twig',
 				array(

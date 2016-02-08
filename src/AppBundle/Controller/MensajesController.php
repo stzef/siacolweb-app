@@ -25,7 +25,6 @@ class MensajesController extends Controller{
 			array('fecha' => 'DESC')
 			);
 
-
 		$context = array(
 				'mensajes' => $mensajes
 			);

@@ -6,7 +6,9 @@
 		</div>
 		<div class="row center">
 			<figure>
-				<img src="{{ asset("bundles/app/img/logo.png") }}" width="100">
+				{% set logo = colegio.getLogo1()|split('/') %}
+				{% set url_logo = logo[2]~"/"~logo[3]~"/"~logo[4] %}
+				<img src="{{ asset("bundles/app/img/"~url_logo) }}" width="100">
 			</figure>
 		</div>
 		<div class="row errors">
@@ -32,7 +34,7 @@
 					<input type="password" id="password" name="_password" />
 				</div>
 			</div>
-			
+
 			<div class="row form-group">
 				<button type="submit">Ingresar</button>
 			</div>

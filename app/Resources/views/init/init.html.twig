@@ -10,21 +10,23 @@
 			{% for empresa in empresas %}
 			<div class="row middle colegio" onclick="load(this)">
 				<input type="hidden" class="ccolegio" name="colegio" value="{{empresa.getCempre()}}">
-		        <div class="col-4 center colegio-logo">
-			        <figure>
-			        	<img src="{{ asset("bundles/app/img/logo.png") }}" alt="{{empresa.getNempre()}}" width="50">
-			        </figure>
-		        </div>
-		        <div class="col-8 ">
-			        {{empresa.getNempre()}}
-		        </div>
+						<div class="col-4 center colegio-logo">
+							<figure>
+								{% set logo = empresa.getImage()|split('/') %}
+								{% set url_logo = logo[0]~"/"~logo[1]~"/"~logo[2] %}
+								<img src="{{ asset("bundles/app/img/"~url_logo) }}" alt="{{empresa.getNempre()}}" width="50">
+							</figure>
+						</div>
+						<div class="col-8 ">
+							{{empresa.getNempre()}}
+						</div>
 			</div>
-	    	{% endfor %}
-	    	<div class="row">
-	    		<div class="col-12 center">
-	    			...
-	    		</div>
-	    	</div>
+				{% endfor %}
+				<div class="row">
+					<div class="col-12 center">
+						...
+					</div>
+				</div>
 		</div>
 	</div>
 {% endblock %}

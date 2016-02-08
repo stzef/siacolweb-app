@@ -8,7 +8,11 @@
 <div class="container">
 	<div class="container username-container">
 		<div class="row end">
-			<p class="username">{{ usuario.getAlias() }}</p>
+			{% if foreingUser %}
+				<p class="username">{{ foreingUser }}</p>
+			{% else %}
+				<p class="username"> No sé quien eres. </p>
+			{% endif %}
 		</div>
 	</div>
 	<div class="container">

@@ -28,11 +28,22 @@ class MainMenuController extends Controller {
 
 		$mensajes = $query->getQuery()->getSingleScalarResult();
 
+		$foreingUser = $this->getForeignUser($user);
+
 		$context = array(
 				'usuario' => $user,
+				'foreingUser' => $foreingUser,
 				'numero_mensajes' => $mensajes
 			);
+
 		return $this->render("main_menu/index.html.twig", $context);
+	}
+
+	public function getForeignUser($user)
+	{
+		$foreingUser = null;
+
+		return $foreingUser;
 	}
 
 }
