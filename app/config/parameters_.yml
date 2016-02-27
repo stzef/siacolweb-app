@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 192.168.0.12
+    database_host: 192.168.0.10
     database_port: 3306
     database_name: siacolweb_v4_2_colegios
     database_user: root

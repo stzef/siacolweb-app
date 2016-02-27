@@ -13,6 +13,7 @@ class MainMenuController extends Controller {
 	// return view main_menu.index
 		/**
 		 * @Route("/menu", name="menu")
+		 * @Security("has_role('A')")
 		 */
 	public function indexAction(Request $request)
 	{

@@ -8,6 +8,7 @@ use AppBundle\Controller\InitController;
 use AppBundle\Controller\SecurityController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
 * 
@@ -35,8 +36,8 @@ class EnvironmentListener extends ContainerAware
 			$event->setController(function() use ($redirectInit) {
 					return new RedirectResponse($redirectInit);
 				});
-		}*/
-
+		}
+		*/
 		if ( isset($environment))
 		{
 			if ( $controller[0] instanceof InitController)

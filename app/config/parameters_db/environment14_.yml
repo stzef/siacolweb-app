@@ -1,6 +1,6 @@
 # Archivo con parametros de configuracion para conexion a base de datos
 driver: pdo_mysql
-host: 192.168.0.12
+host: 192.168.0.10
 port: 3306
 dbname: siacolweb_v4_2_sumapaz
 user: root

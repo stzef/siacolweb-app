@@ -14,14 +14,11 @@ class InitController extends Controller
 	/**
 	 * @Route("/init", name="init")
 	 */
-	public function selectColegiosAction()
+	public function selectColegiosAction(Request $request)
 	{
-		
-		
 		$empresaRepository = $this->getDoctrine()
 				->getRepository('AppBundle:Empresas');
-		$empresas = $empresaRepository->findBy(array('ifmovil' => true ));
-		
+		$empresas = $empresaRepository->findAll();
 
 		return $this->render('init/init.html.twig', array(
 				'empresas' => $empresas
@@ -34,6 +31,7 @@ class InitController extends Controller
 	 */
 	public function loadEnvironmentAction(Request $request, $codigo_colegio)
 	{
+
 		$empresa = $this->getEmpresa($codigo_colegio);
 
 		// No found Empresa
