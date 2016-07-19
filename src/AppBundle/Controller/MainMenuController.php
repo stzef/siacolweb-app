@@ -23,19 +23,26 @@ class MainMenuController extends Controller {
 		$mensajesRepository = $this->getDoctrine()
 								->getRepository('AppBundle:Mensajes');
 
-		$query = $mensajesRepository->createQueryBuilder('mensajes')
+		$queryMensajes = $mensajesRepository->createQueryBuilder('mensajes')
 								->select('COUNT(mensajes)')
-								->where('mensajes.receptor = :receptor')
+								->where('mensajes.receptor = :receptor AND mensajes.timensaje = 1')
 								->setParameter('receptor',$user->getId());
 
-		$mensajes = $query->getQuery()->getSingleScalarResult();
+		$queryAgenda = $mensajesRepository->createQueryBuilder('mensajes')
+								->select('COUNT(mensajes)')
+								->where('mensajes.receptor = :receptor AND mensajes.timensaje = 2')
+								->setParameter('receptor',$user->getId());
+
+		$mensajes = $queryMensajes->getQuery()->getSingleScalarResult();
+		$mensajesAgenda = $queryAgenda->getQuery()->getSingleScalarResult();
 
 		$foreingUser = $this->getForeignUser($user);
 
 		$context = array(
 				'usuario' => $user,
 				'foreingUser' => $foreingUser,
-				'numero_mensajes' => $mensajes
+				'numero_mensajes' => $mensajes,
+				'numero_mensajes_genda' => $mensajesAgenda
 			);
 
 		return $this->render("main_menu/index.html.twig", $context);
