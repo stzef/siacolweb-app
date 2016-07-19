@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Movimientos" table="movimientos">
+    <id name="cmovi" type="string" column="cmovi" length="10">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="calum" type="string" column="calum" length="8" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="citerce" type="string" column="citerce" length="8" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nombre" type="string" column="nombre" length="60" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="ctimovi" type="string" column="ctimovi" length="4" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="fmovi" type="date" column="fmovi" nullable="true"/>
+    <field name="descrimovi" type="text" column="descrimovi" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="vttotal" type="decimal" column="vttotal" precision="12" scale="2" nullable="true"/>
+    <field name="activo" type="string" column="activo" length="1" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="vefe" type="decimal" column="vefe" precision="12" scale="2" nullable="true"/>
+    <field name="vtar" type="decimal" column="vtar" precision="12" scale="2" nullable="true"/>
+    <field name="doctar" type="string" column="doctar" length="10" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="bantar" type="string" column="bantar" length="20" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="vch" type="decimal" column="vch" precision="12" scale="2" nullable="true"/>
+    <field name="docch" type="string" column="docch" length="10" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="banch" type="string" column="banch" length="20" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="ventre" type="decimal" column="ventre" precision="12" scale="2" nullable="true"/>
+    <field name="vcambio" type="decimal" column="vcambio" precision="12" scale="2" nullable="true"/>
+    <field name="fvencimiento1" type="date" column="fvencimiento1" nullable="true"/>
+    <field name="fvencimiento2" type="date" column="fvencimiento2" nullable="true"/>
+    <field name="descuento" type="decimal" column="descuento" precision="12" scale="2" nullable="true">
+      <options>
+        <option name="default">0.00</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

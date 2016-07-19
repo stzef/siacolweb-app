@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Valoraciones" table="valoraciones">
+    <id name="cvalo" type="string" column="cvalo" length="1">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nvalo" type="string" column="nvalo" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nvaloalt" type="string" column="nvaloalt" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="sigla" type="string" column="sigla" length="15" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="orden" type="integer" column="orden" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <field name="rini" type="decimal" column="rini" precision="5" scale="2" nullable="true">
+      <options>
+        <option name="comment">3 enteros 2 decimales</option>
+      </options>
+    </field>
+    <field name="rfin" type="decimal" column="rfin" precision="5" scale="2" nullable="true">
+      <options>
+        <option name="comment">3 enteros 2 decimales</option>
+      </options>
+    </field>
+    <field name="color" type="string" column="color" length="12" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="comment">G,R,B</option>
+        <option name="default">255</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

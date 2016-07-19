@@ -326,4 +326,60 @@ class Alumnos
     }
     */
 
+
+    /**
+     * Set cesta
+     *
+     * @param \AppBundle\Entity\Estados $cesta
+     *
+     * @return Alumnos
+     */
+    public function setCesta(\AppBundle\Entity\Estados $cesta = null)
+    {
+        $this->cesta = $cesta;
+
+        return $this;
+    }
+
+    /**
+     * Set ctipo
+     *
+     * @param \AppBundle\Entity\Tiposdoc $ctipo
+     *
+     * @return Alumnos
+     */
+    public function setCtipo(\AppBundle\Entity\Tiposdoc $ctipo = null)
+    {
+        $this->ctipo = $ctipo;
+
+        return $this;
+    }
+
+    /**
+     * Set cdeptoexpe
+     *
+     * @param \AppBundle\Entity\Departamentos $cdeptoexpe
+     *
+     * @return Alumnos
+     */
+    public function setCdeptoexpe(\AppBundle\Entity\Departamentos $cdeptoexpe = null)
+    {
+        $this->cdeptoexpe = $cdeptoexpe;
+
+        return $this;
+    }
+
+    /**
+     * Set cmuniexpe
+     *
+     * @param \AppBundle\Entity\Municipios $cmuniexpe
+     *
+     * @return Alumnos
+     */
+    public function setCmuniexpe(\AppBundle\Entity\Municipios $cmuniexpe = null)
+    {
+        $this->cmuniexpe = $cmuniexpe;
+
+        return $this;
+    }
 }

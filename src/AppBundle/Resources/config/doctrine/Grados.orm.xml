@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Grados" table="grados">
+    <indexes>
+      <index name="grados_ctipedufk_1" columns="ctipedu"/>
+    </indexes>
+    <id name="cgrado" type="string" column="cgrado" length="2">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ngrado" type="string" column="ngrado" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="tipo" type="string" column="tipo" length="1" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="activo" type="boolean" column="activo" nullable="true"/>
+    <field name="orden" type="integer" column="orden" nullable="true">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">0</option>
+      </options>
+    </field>
+    <many-to-one field="ctipedu" target-entity="Tipedu" fetch="LAZY">
+      <join-columns>
+        <join-column name="ctipedu" referenced-column-name="ctipedu"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -2,51 +2,73 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Mensajes
+ *
+ * @ORM\Table(name="mensajes")
  * @ORM\Entity
  */
 class Mensajes
 {
-    /** 
-    * @var integer
-    * @ORM\Column(name="emisor", type="string", length=20, nullable=true)
-    */
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="emisor", type="string", length=20, nullable=false)
+     */
     private $emisor;
 
     /**
      * @var integer
-     * @ORM\Column(name="receptor", type="integer", length=12, nullable=true)
+     *
+     * @ORM\Column(name="receptor", type="integer", nullable=false)
      */
     private $receptor;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="fecha", type="datetime", nullable=false)
      */
     private $fecha;
 
     /**
      * @var string
-     * @ORM\Column(name="mensaje", type="string", length=300, nullable=true)
+     *
+     * @ORM\Column(name="mensaje", type="string", length=300, nullable=false)
      */
     private $mensaje;
 
     /**
      * @var boolean
+     *
+     * @ORM\Column(name="ifvisto", type="boolean", nullable=false)
      */
     private $ifvisto;
 
     /**
      * @var integer
-     * @ORM\Column(name="cmensaje", type="integer", length=10, nullable=true)
+     *
+     * @ORM\Column(name="timensaje", type="integer", nullable=true)
+     */
+    private $timensaje = '1';
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cmensaje", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $cmensaje;
+
 
 
     /**
      * Set emisor
      *
-     * @param integer $emisor
+     * @param string $emisor
      *
      * @return Mensajes
      */
@@ -60,7 +82,7 @@ class Mensajes
     /**
      * Get emisor
      *
-     * @return integer
+     * @return string
      */
     public function getEmisor()
     {
@@ -161,6 +183,30 @@ class Mensajes
     public function getIfvisto()
     {
         return $this->ifvisto;
+    }
+
+    /**
+     * Set timensaje
+     *
+     * @param integer $timensaje
+     *
+     * @return Mensajes
+     */
+    public function setTimensaje($timensaje)
+    {
+        $this->timensaje = $timensaje;
+
+        return $this;
+    }
+
+    /**
+     * Get timensaje
+     *
+     * @return integer
+     */
+    public function getTimensaje()
+    {
+        return $this->timensaje;
     }
 
     /**

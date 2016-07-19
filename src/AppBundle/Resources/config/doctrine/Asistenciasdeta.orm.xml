@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Asistenciasdeta" table="asistenciasdeta">
+    <indexes>
+      <index name="casis" columns="casis"/>
+    </indexes>
+    <id name="dia" type="string" column="dia" length="2"/>
+    <id name="casis" association-key="true"/>
+    <field name="estado" type="integer" column="estado" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <one-to-one field="casis" target-entity="Asistencias" fetch="LAZY">
+      <join-columns>
+        <join-column name="casis" referenced-column-name="casis"/>
+      </join-columns>
+    </one-to-one>
+  </entity>
+</doctrine-mapping>

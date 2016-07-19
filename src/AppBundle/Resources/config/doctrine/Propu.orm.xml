@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Propu" table="propu">
+    <indexes>
+      <index name="propu_vota_cvota" columns="cvota"/>
+    </indexes>
+    <id name="cpropu" type="string" column="cpropu" length="4">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cvota" type="string" column="cvota" length="4" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="npropu" type="string" column="npropu" length="200" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="fotopropu" type="text" column="fotopropu" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nupropu" type="string" column="nupropu" length="2" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nusufra" type="decimal" column="nusufra" precision="4" scale="0" nullable="true"/>
+    <field name="nuelimi" type="decimal" column="nuelimi" precision="4" scale="0" nullable="true"/>
+    <field name="eslogan" type="string" column="eslogan" length="40" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

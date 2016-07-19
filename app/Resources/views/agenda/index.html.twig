@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+	<div class="row header middle center">
+		<div class="col-2">
+			<a href="{{ path('menu') }}" class="atras"><</a>
+		</div>
+		<div class="col-10">
+			<h3>
+				Agenda
+			</h3>
+		</div>
+	</div>
+	<div class="container">
+		{% if agenda %}
+			{% for mensaje in agenda %}
+			<div class="container mensaje-content">
+				<div class="row mensaje-description">
+					<p >
+						{{ mensaje.mensaje }}
+					</p>
+				</div>
+				<div class="row">
+					<span class="col-6 mensaje-emisor">Enviado por: <b>{{ mensaje.emisor }}</b></span>
+					<span class="col-6 mensaje-fecha"> {{ mensaje.fecha|date('Y-m-d H:i:s') }} </span>
+				</div>
+			</div>
+			{% endfor %}
+		{% else %}
+			<h4>No tienes mensajes en la Agenda</h4>
+		{% endif %}
+	</div>
+{% endblock %}

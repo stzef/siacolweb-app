@@ -21,7 +21,10 @@ class MensajesController extends Controller{
 								->getRepository('AppBundle:Mensajes');
 
 		$mensajes = $mensajesRepository->findBy(
-			array('receptor' => $user->getId()),
+			array(
+				'receptor' => $user->getId(),
+				'timensaje' => 1
+			),
 			array('fecha' => 'DESC')
 			);
 

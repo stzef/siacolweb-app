@@ -4,10 +4,10 @@
     <indexes>
       <index name="planestu_FKIndex1" columns="cgrupo"/>
       <index name="planestu_FKIndex2" columns="cmate"/>
-      <!--<index name="planestu_FKIndex3" columns="cprofe"/>-->
+      <index name="planestu_FKIndex3" columns="cprofe"/>
     </indexes>
     <id name="cgrupo" type="string" column="cgrupo" length="8"/>
-    <!--<id name="cprofe" type="string" column="cprofe" length="4"/>-->
+    <id name="cprofe" type="string" column="cprofe" length="4"/>
     <id name="cmate" type="string" column="cmate" length="6"/>
     <field name="ifperi1" type="boolean" column="ifperi1" nullable="false">
       <options>

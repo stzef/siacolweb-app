@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Movimientosdeta" table="movimientosdeta">
+    <indexes>
+      <index name="movimientosdeta_ibfk_1" columns="cmovi"/>
+    </indexes>
+    <id name="itmovi" type="string" column="itmovi" length="4"/>
+    <id name="cmovi" type="string" column="cmovi" length="10"/>
+    <field name="docuref" type="string" column="docuref" length="10" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cconcep" type="string" column="cconcep" length="6" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nconcep" type="string" column="nconcep" length="60" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="canti" type="integer" column="canti" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="vunita" type="decimal" column="vunita" precision="12" scale="2" nullable="true"/>
+    <field name="vtotal" type="decimal" column="vtotal" precision="12" scale="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>

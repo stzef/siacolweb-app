@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Horario" table="horario">
+    <indexes>
+      <index name="fk_horario_salones" columns="csede,csalon"/>
+      <index name="fk_horario_planestu" columns="cgrupo,cprofe,cmate"/>
+      <index name="fk_horario_horas" columns="chora"/>
+      <index name="fk_horario_dias" columns="cdia"/>
+    </indexes>
+    <id name="ithorario" type="string" column="ithorario" length="8">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="csede" type="string" column="csede" length="2" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="csalon" type="string" column="csalon" length="10" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cgrupo" type="string" column="cgrupo" length="8" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="chora" type="string" column="chora" length="2" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cprofe" type="string" column="cprofe" length="4" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cmate" type="string" column="cmate" length="6" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cdia" type="string" column="cdia" length="1" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

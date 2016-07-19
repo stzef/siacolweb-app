@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Certi" table="certi">
+    <indexes>
+      <index name="cticerti" columns="cticerti"/>
+    </indexes>
+    <id name="ccerti" type="string" column="ccerti" length="10">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="calum" type="string" column="calum" length="10" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nalum" type="string" column="nalum" length="100" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="fcerti" type="date" column="fcerti" nullable="false"/>
+    <field name="anocerti" type="string" column="anocerti" length="4" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="pericerti" type="integer" column="pericerti" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="texto" type="text" column="texto" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="nfirma1" type="string" column="nfirma1" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nfirma2" type="string" column="nfirma2" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nelabora" type="string" column="nelabora" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="observa" type="text" column="observa" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fondoimg" type="string" column="fondoimg" length="70" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nesta" type="string" column="nesta" length="60" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <many-to-one field="cticerti" target-entity="Ticerti" fetch="LAZY">
+      <join-columns>
+        <join-column name="cticerti" referenced-column-name="cticerti"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

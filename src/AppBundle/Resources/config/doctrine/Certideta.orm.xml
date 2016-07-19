@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Certideta" table="certideta">
+    <id name="itcerti" type="string" column="itcerti" length="4"/>
+    <id name="ccerti" type="string" column="ccerti" length="10"/>
+    <field name="cmate" type="string" column="cmate" length="6" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nmate" type="string" column="nmate" length="80" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="ihs" type="integer" column="ihs" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="valnum" type="decimal" column="valnum" precision="10" scale="0" nullable="false"/>
+    <field name="valcon" type="string" column="valcon" length="80" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Matriculas" table="matriculas">
+    <unique-constraints>
+      <unique-constraint name="cmatricula" columns="cmatricula"/>
+    </unique-constraints>
+    <id name="cmatricula" type="string" column="cmatricula" length="15">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nuevo" type="string" column="nuevo" nullable="true">
+      <options>
+        <option name="fixed"/>
+        <option name="default">T</option>
+      </options>
+    </field>
+    <field name="cestamatricula" type="integer" column="cestamatricula" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="numregalum" type="string" column="numregalum" length="15" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="calum" type="string" column="calum" length="8" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cjorna" type="string" column="cjorna" length="2" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="csede" type="string" column="csede" length="2" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cgrado" type="string" column="cgrado" length="2" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cgrupo" type="string" column="cgrupo" length="8" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="ano" type="string" column="ano" length="4" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="fregistro" type="date" column="fregistro" nullable="true"/>
+    <field name="instprocedencia" type="string" column="instprocedencia" length="100" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="estacademico" type="string" column="estacademico" length="30" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="motivotraslado" type="text" column="motivotraslado" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fretiro" type="date" column="fretiro" nullable="true"/>
+    <field name="cretiro" type="integer" column="cretiro" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="observretiro" type="text" column="observretiro" length="65535" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

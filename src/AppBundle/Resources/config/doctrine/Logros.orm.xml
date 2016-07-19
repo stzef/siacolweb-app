@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Logros" table="logros">
+    <indexes>
+      <index name="ctilogro" columns="ctilogro"/>
+      <index name="cgrado" columns="cgrado"/>
+      <index name="cmate" columns="cmate"/>
+      <index name="cvalo" columns="cvalo"/>
+    </indexes>
+    <id name="clogro" type="string" column="clogro" length="9">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ctilogro" type="string" column="ctilogro" length="2" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cgrado" type="string" column="cgrado" length="2" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cmate" type="string" column="cmate" length="6" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="ano" type="string" column="ano" length="4" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="peri" type="string" column="peri" length="2" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="deta" type="string" column="deta" length="250" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="detaalt" type="string" column="detaalt" length="300" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="cvalo" type="string" column="cvalo" length="1" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="general" type="boolean" column="general" nullable="true"/>
+    <field name="peso" type="integer" column="peso" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

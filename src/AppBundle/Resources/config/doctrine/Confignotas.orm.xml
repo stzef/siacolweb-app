@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Confignotas" table="confignotas">
+    <indexes>
+      <index name="confignotas_config" columns="itconfig,grupo"/>
+    </indexes>
+    <id name="itemconfig" type="integer" column="itemconfig"/>
+    <id name="item" type="integer" column="item"/>
+    <field name="nombre" type="string" column="nombre" length="40" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="sigla" type="string" column="sigla" length="20" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="peso" type="decimal" column="peso" precision="10" scale="2" nullable="true"/>
+    <field name="conse" type="integer" column="conse" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="itconfig" type="integer" column="itconfig" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="grupo" type="integer" column="grupo" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="general" type="string" column="general" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="class" type="string" column="class" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

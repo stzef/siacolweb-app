@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Retiros" table="retiros">
+    <id name="cretiro" type="integer" column="cretiro">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nretiro" type="string" column="nretiro" length="40" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="activo" type="boolean" column="activo" nullable="false"/>
+  </entity>
+</doctrine-mapping>

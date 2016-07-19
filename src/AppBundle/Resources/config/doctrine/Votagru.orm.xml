@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Votagru" table="votagru">
+    <indexes>
+      <index name="votagru_vota_cvota" columns="cvota"/>
+      <index name="votagru_grupos_cgrupo" columns="cgrupo"/>
+    </indexes>
+    <id name="cvotagru" type="integer" column="cvotagru">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cvota" type="string" column="cvota" length="4" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cgrupo" type="string" column="cgrupo" length="8" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

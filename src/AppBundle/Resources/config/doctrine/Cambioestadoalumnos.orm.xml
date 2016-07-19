@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Cambioestadoalumnos" table="cambioestadoalumnos">
+    <indexes>
+      <index name="codigoalumnosretirados" columns="calum"/>
+      <index name="ctipoestado_ctipoestado" columns="ctipoestado"/>
+    </indexes>
+    <id name="idcambioestado" type="string" column="idCambioEstado" length="4">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="calum" type="string" column="calum" length="8" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="fregistro" type="date" column="fRegistro" nullable="false"/>
+    <field name="fhaccion" type="datetime" column="fhaccion" nullable="false">
+      <options>
+        <option name="default">CURRENT_TIMESTAMP</option>
+      </options>
+    </field>
+    <field name="ctipoestado" type="integer" column="ctipoestado" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="descripcion" type="string" column="descripcion" length="200" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

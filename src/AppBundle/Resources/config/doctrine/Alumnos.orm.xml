@@ -83,12 +83,7 @@
         <option name="fixed"/>
       </options>
     </field>
-    <many-to-one field="cgrupo" target-entity="Grupos" fetch="LAZY">
-      <join-columns>
-        <join-column name="cgrupo" referenced-column-name="cgrupo"/>
-      </join-columns>
-    </many-to-one>
-    <!--<many-to-one field="cesta" target-entity="Estados" fetch="LAZY">
+    <many-to-one field="cesta" target-entity="Estados" fetch="LAZY">
       <join-columns>
         <join-column name="cesta" referenced-column-name="cesta"/>
       </join-columns>
@@ -96,6 +91,11 @@
     <many-to-one field="ctipo" target-entity="Tiposdoc" fetch="LAZY">
       <join-columns>
         <join-column name="ctipo" referenced-column-name="ctipo"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cgrupo" target-entity="Grupos" fetch="LAZY">
+      <join-columns>
+        <join-column name="cgrupo" referenced-column-name="cgrupo"/>
       </join-columns>
     </many-to-one>
     <many-to-one field="cdeptoexpe" target-entity="Departamentos" fetch="LAZY">
@@ -108,6 +108,5 @@
         <join-column name="cmuniexpe" referenced-column-name="cmuni"/>
       </join-columns>
     </many-to-one>
-    -->
   </entity>
 </doctrine-mapping>

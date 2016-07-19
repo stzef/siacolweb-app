@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Estafin" table="estafin">
+    <id name="cestafin" type="string" column="cestafin" length="2">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nestafin" type="string" column="nestafin" length="40" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+        <option name="comment">Nombre del estado final. Ej: Promovido, Aplazado y No promovido</option>
+      </options>
+    </field>
+    <field name="riniap" type="decimal" column="riniap" precision="5" scale="2" nullable="false"/>
+    <field name="rfniap" type="decimal" column="rfniap" precision="5" scale="2" nullable="false"/>
+    <field name="estado" type="string" column="estado" nullable="false">
+      <options>
+        <option name="fixed"/>
+        <option name="default">R</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

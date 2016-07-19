@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Anecdotario" table="anecdotario">
+    <indexes>
+      <index name="fk_anecdotario_alumnos" columns="calum"/>
+      <index name="fk_anecdotario_profes" columns="cprofe"/>
+    </indexes>
+    <id name="ccaso" type="integer" column="ccaso">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="peri" type="string" column="peri" length="1" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="fcaso" type="date" column="fcaso" nullable="false"/>
+    <field name="cargo" type="text" column="cargo" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="descargo" type="text" column="descargo" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="final" type="text" column="final" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="gravedad" type="decimal" column="gravedad" precision="10" scale="0" nullable="false"/>
+    <many-to-one field="cprofe" target-entity="Profes" fetch="LAZY">
+      <join-columns>
+        <join-column name="cprofe" referenced-column-name="cprofe"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="calum" target-entity="Alumnos" fetch="LAZY">
+      <join-columns>
+        <join-column name="calum" referenced-column-name="calum"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

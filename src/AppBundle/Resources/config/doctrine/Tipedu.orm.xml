@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\Tipedu" table="tipedu">
+    <id name="ctipedu" type="string" column="ctipedu" length="1">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ntipedu" type="string" column="ntipedu" length="15" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="ihsest" type="string" column="ihsest" length="3" nullable="true">
+      <options>
+        <option name="fixed">1</option>
+        <option name="comment">ihs estimada para cada tipo</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

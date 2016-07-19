@@ -14,7 +14,7 @@
         <option name="fixed">1</option>
       </options>
     </field>
-    <field name="nit" type="string" column="nit" length="9" nullable="true">
+    <field name="nit" type="string" column="nit" length="10" nullable="true">
       <options>
         <option name="fixed">1</option>
       </options>
@@ -147,6 +147,16 @@
       </options>
     </field>
     <field name="emailpnotas" type="string" column="emailpnotas" length="80" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="modulos" type="string" column="modulos" length="20" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="repositorio" type="string" column="repositorio" length="50" nullable="true">
       <options>
         <option name="fixed"/>
       </options>
