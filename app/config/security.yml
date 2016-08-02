@@ -26,6 +26,9 @@ security:
                 check_path: /login_check
                 default_target_path: /menu
                 always_use_default_target_path: true
+            logout:
+                path: /logout
+                target: /init
 
             provider: our_db_provider
 

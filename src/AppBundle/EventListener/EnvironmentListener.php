@@ -54,7 +54,8 @@ class EnvironmentListener extends ContainerAware
 						return;
 					}
 					else{
-						$redirectUrl = '/login';
+						$environment = $session->remove('environment');
+						$redirectUrl = '/init';
 						$event->setController(function() use ($redirectUrl) {
 							return new RedirectResponse($redirectUrl);
 						});

@@ -11,7 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 */
 class SecurityController extends Controller
 {
-
+	/**
+	*@Route("/logout", name="logout")                                                                                                 '
+	*/
+	public function logoutAction(Request $request){
+	}
 	/**
 	*@Route("/login", name="login")                                                                                                 '
 	*/
