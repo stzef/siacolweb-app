@@ -20,7 +20,10 @@
 					</p>
 				</div>
 				<div class="row">
-					<span class="col-6 mensaje-emisor">Enviado por: <b>{{ mensaje.emisor }}</b></span>
+					<span class="col-6 mensaje-emisor">
+						Enviado por: 
+						<b>{{mensaje.nom1profe}} {{mensaje.ape1profe}}({{mensaje.emisor}})</b>
+					</span>
 					<span class="col-6 mensaje-fecha"> {{ mensaje.fecha|date('Y-m-d H:i:s') }} </span>
 				</div>
 			</div>
