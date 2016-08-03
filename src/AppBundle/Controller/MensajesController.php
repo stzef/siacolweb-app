@@ -20,13 +20,23 @@ class MensajesController extends Controller{
 		$mensajesRepository = $this->getDoctrine()
 								->getRepository('AppBundle:Mensajes');
 
+		/*
 		$mensajes = $mensajesRepository->findBy(
 			array(
 				'receptor' => $user->getId(),
 				'timensaje' => 1
 			),
 			array('fecha' => 'DESC')
-			);
+		);
+		*/
+
+		$mensajes = $this->getDoctrine()->getEntityManager()
+			->createQuery('SELECT mensajes
+			FROM AppBundle:Mensajes mensajes
+			WHERE mensajes.receptor = :receptor AND mensajes.timensaje = 1'
+			)
+			->setParameter('receptor', $user->getId())
+			->getResult();
 
 		$context = array(
 				'mensajes' => $mensajes
