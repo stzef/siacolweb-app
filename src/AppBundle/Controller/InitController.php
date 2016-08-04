@@ -18,7 +18,15 @@ class InitController extends Controller
 	{
 		$empresaRepository = $this->getDoctrine()
 				->getRepository('AppBundle:Empresas');
-		$empresas = $empresaRepository->findAll();
+		/*
+		$empresas = $empresaRepository->find(array(),array("ifmovil" => "DESC"));
+		*/
+
+		$empresas = $empresaRepository->findBy(
+			array(),
+			array('ifmovil' => 'DESC')
+		);
+
 
 		return $this->render('init/init.html.twig', array(
 				'empresas' => $empresas

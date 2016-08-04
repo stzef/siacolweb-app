@@ -37,11 +37,6 @@ class AgendaController extends Controller{
 			)
 		->setParameter('receptor', $user->getId())
 		->getResult();
-<<<<<<< HEAD
-		//dump($agenda);
-=======
-		dump($agenda);
->>>>>>> 574c7048eb79ee35c3fa19a54c53ec6f18e0dfd7
 		/*
 		$agenda = $mensajesRepository->findBy(
 			array(
